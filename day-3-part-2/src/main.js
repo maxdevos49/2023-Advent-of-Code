@@ -17,7 +17,7 @@ function main(argv) {
 
 		let sumGearRatios = 0;
 
-		/** @type {Record<string,import('./parse-part-numbers-2.js').PartNumber[]} */
+		/** @type {Record<string,import('./parse-part-numbers-2.js').PartNumber[]>} */
 		const partsGroupedBySymbol = {};
 		for (const part of potentialGears) {
 			for (const symbol of part.symbols) {
