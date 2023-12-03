@@ -5,9 +5,7 @@
  * @returns {boolean} true if the character is a numeric. False on other cases.
  */
 function isNumber(char) {
-    return !Number.isNaN(parseInt(char))
+	return !Number.isNaN(parseInt(char));
 }
 
-export {
-    isNumber
-}
+export { isNumber };

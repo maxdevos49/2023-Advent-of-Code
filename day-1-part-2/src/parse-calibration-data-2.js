@@ -1,7 +1,17 @@
 import { isNumber } from '../../day-1-part-1/src/is-number.js';
 
-const NUM_STRINGS = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
-const NUM_VALUES = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+const NUM_STRINGS = [
+	'one',
+	'two',
+	'three',
+	'four',
+	'five',
+	'six',
+	'seven',
+	'eight',
+	'nine'
+];
+const NUM_VALUES = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 /**
  * Parses and calculates the calibration sum.
@@ -24,20 +34,20 @@ function parseCalibrationData2(data) {
 	 * @returns {void}
 	 */
 	const recordNumber = (numChar) => {
-		if (firstNumber === "") {
+		if (firstNumber === '') {
 			firstNumber = numChar;
 			lastNumber = numChar;
 		}
 
 		lastNumber = numChar;
-	}
+	};
 
 	outer_loop: while (searchIndex++ < data.length) {
 		const currentChar = data[searchIndex];
-		if (currentChar === "\n") {
+		if (currentChar === '\n') {
 			sum += parseInt(firstNumber + lastNumber);
-			firstNumber = "";
-			lastNumber = "";
+			firstNumber = '';
+			lastNumber = '';
 
 			continue;
 		}
@@ -49,7 +59,12 @@ function parseCalibrationData2(data) {
 		}
 
 		for (let i = 0; i < 9; i++) {
-			if (data.substring(searchIndex, searchIndex + NUM_STRINGS[i].length) !== NUM_STRINGS[i]) {
+			if (
+				data.substring(
+					searchIndex,
+					searchIndex + NUM_STRINGS[i].length
+				) !== NUM_STRINGS[i]
+			) {
 				continue;
 			}
 
@@ -65,6 +80,4 @@ function parseCalibrationData2(data) {
 	return sum;
 }
 
-export {
-	parseCalibrationData2
-}
+export { parseCalibrationData2 };

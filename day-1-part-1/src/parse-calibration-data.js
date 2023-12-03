@@ -7,35 +7,33 @@ import { isNumber } from './is-number.js';
  * @returns {number} The calibration sum.
  */
 function parseCalibrationData(data) {
-    let sum = 0;
+	let sum = 0;
 
-    let firstNumber = '';
-    let lastNumber = '';
-    for (const letter of data) {
-        if (letter === "\n") {
-            sum += parseInt(firstNumber + lastNumber);
-            firstNumber = "";
-            lastNumber = "";
+	let firstNumber = '';
+	let lastNumber = '';
+	for (const letter of data) {
+		if (letter === '\n') {
+			sum += parseInt(firstNumber + lastNumber);
+			firstNumber = '';
+			lastNumber = '';
 
-            continue;
-        }
+			continue;
+		}
 
-        if (isNumber(letter)) {
-            if (firstNumber === "") {
-                firstNumber = letter;
-                lastNumber = letter;
-                continue;
-            }
+		if (isNumber(letter)) {
+			if (firstNumber === '') {
+				firstNumber = letter;
+				lastNumber = letter;
+				continue;
+			}
 
-            lastNumber = letter;
-        }
-    }
+			lastNumber = letter;
+		}
+	}
 
-    sum += parseInt(firstNumber + lastNumber);
+	sum += parseInt(firstNumber + lastNumber);
 
-    return sum;
+	return sum;
 }
 
-export {
-    parseCalibrationData
-}
+export { parseCalibrationData };

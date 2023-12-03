@@ -1,4 +1,4 @@
-import process from "node:process";
+import process from 'node:process';
 import { parseCalibrationData2 } from './parse-calibration-data-2.js';
 import { loadTextFile } from '../../day-1-part-1/src/load-text-file.js';
 
@@ -12,10 +12,14 @@ function main(argv) {
 		const calibrationData = loadTextFile(argv[2]);
 		const calibrationSum = parseCalibrationData2(calibrationData);
 
-		console.log("Calibration Sum: " + calibrationSum)
+		console.log('Calibration Sum: ' + calibrationSum);
 		process.exit(0);
 	} catch (error) {
-		console.error(error && typeof error === "object" && "message" in error ? error?.message : "Unknown error occured.");
+		console.error(
+			error && typeof error === 'object' && 'message' in error
+				? error?.message
+				: 'Unknown error occured.'
+		);
 		process.exit(1);
 	}
 }
